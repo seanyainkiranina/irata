@@ -1,0 +1,48 @@
+
+ set 7800header 'Irata Battle'
+ set multibutton on
+ set tv NTSC
+ 
+
+
+ 
+ set zoneheight 16
+ displaymode 160B 
+ set plotvalueonscreen on
+ set bankset on
+
+ set romsize 128k
+
+ incgraphic font.png 160A
+ characterset font
+ alphachars '0123456789abcdefghijklmnopqrstuvwxyz>`?!/.,-_()[]&AB '
+
+ rem pallette 0 text
+ P0C1=$0F 
+ P0C2=$0C
+ P0C3=$0A
+
+ BACKGRND = $00
+
+ dim bgColor = var1
+ dim wait = var2
+ 
+ bgColor = 0
+ wait = 0
+
+
+  clearscreen
+ BACKGRND = bgColor
+
+gameloop
+
+   clearscreen
+ 
+
+ plotchars 'welcome irata warrior!' 0 58 5
+
+ 
+ 
+  drawscreen
+
+  goto gameloop
